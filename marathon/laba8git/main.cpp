@@ -91,7 +91,7 @@ void quick_sort(vector<Participant>& arr, int left, int right) {
     while (i <= j) {
         while (arr[i].club < pivot.club || (arr[i].club == pivot.club && arr[i].last_name < pivot.last_name)) i++;
         while (arr[j].club > pivot.club || (arr[j].club == pivot.club && arr[j].last_name > pivot.last_name)) j--;
-        if (i <= j) swap(arr[i++], arr[j--]);
+        if (i <= j) swap(arr[i++], arr[j--]); 
     }
 
     quick_sort(arr, left, j);
@@ -100,11 +100,11 @@ void quick_sort(vector<Participant>& arr, int left, int right) {
 
 int main() {
     cout << "Вариант 1: Результаты марафона" << endl;
-    cout << "Автор: Якубовский Дима " << endl;
-    auto participants = read_participants("input.txt");
+    cout << "Автор: Иванов Иван" << endl;
 
-    auto spartak = filter_spartak(participants);
-    auto best_results = filter_better_25000(participants);
+    auto participants = read_participants("input.txt");
+    auto spartak = filter_spartak(participants); 
+    auto best_results = filter_better_25000(participants); 
 
     auto bubble_sorted = participants;
     bubble_sort(bubble_sorted);
@@ -115,7 +115,6 @@ int main() {
     cout << "Участники Спартака:" << endl;
     for (const auto& p : spartak) {
         cout << p.last_name << " " << p.time_result() << endl;
-    }
-
+    } 
     return 0;
 }
