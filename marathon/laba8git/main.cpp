@@ -99,8 +99,7 @@ void quick_sort(vector<Participant>& arr, int left, int right) {
 }
 
 int main() {
-    cout << "Вариант 1: Результаты марафона" << endl;
-    cout << "Автор: Якубовский Дима " << endl;
+   
     auto participants = read_participants("input.txt");
 
     auto spartak = filter_spartak(participants);
